@@ -1,10 +1,10 @@
 A=10 | B=20 | C=55 | D=50 | E=17 | F=1
-<start T1> //quando inicia uma transação
-<T1,A,10,20> //
+<start T1> 
+<T1,A,10,20> 
 <start T2>
 <T2,C,55,45>
 <T2,E,17,77>
-<commit T2> //fim de uma transação e todas as alterações feitas devem ser escritas no disco
+<commit T2> 
 <T1,C,45,70>
 <start T3>
 <T3,B,20,15>
