@@ -2,39 +2,39 @@
 import os
 import string
 
-def files(nomeArquivo):
-    try:
-        file = open(nomeArquivo, 'r')
-        print("Arquivo encontrado") 
-    except:
-        print("Arquivo não encontrado")
-        main()
-    finally:
+def files():
+    
+    while True:
+        try:
+            nomeArquivo = input("Nome do arquivo: ")
+            file = open(nomeArquivo, 'r')
+        except FileNotFoundError:
+            print("Arquivo não encontrado\n")
+        else:
+            break
+    
+    lista = []
+    listaAux = []
+
+    while 1:
+        linha = file.readline()
+        if linha == "":
+             break
+        if linha[0] ==  '':
+            continue
         
-        lista = []
-        listaAux = []
+        #passa o conteudo para as listas
+        listaAux = linha
+        lista.append(listaAux)
 
-        while 1:
-            linha = file.readline()
-            if linha == "":
-                break
-            if linha[0] ==  '':
-                continue
-            
-            #passa o conteudo para as listas
-            listaAux = linha
-            lista.append(listaAux)
-
-        file.close()
+    file.close()
 
     return lista
 
 
 
 def main ():
-    nomeArquivo = input("Nome do arquivo: ")
-
-    tabelaDeLog = files(nomeArquivo)
+    tabelaDeLog = files()
     i = 0
 
     while i < len(tabelaDeLog):
