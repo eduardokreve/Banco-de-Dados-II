@@ -7,24 +7,25 @@ def files(nomeArquivo):
         file = open(nomeArquivo, 'r')
         print("Arquivo encontrado") 
     except:
-        print("Arquivo não encontrado\n")
+        print("Arquivo não encontrado")
         main()
-    
-    lista = []
-    listaAux = []
-
-    while 1:
-        linha = file.readline()
-        if linha == "":
-             break
-        if linha[0] ==  '':
-            continue
+    finally:
         
-        #passa o conteudo para as listas
-        listaAux = linha
-        lista.append(listaAux)
+        lista = []
+        listaAux = []
 
-    file.close()
+        while 1:
+            linha = file.readline()
+            if linha == "":
+                break
+            if linha[0] ==  '':
+                continue
+            
+            #passa o conteudo para as listas
+            listaAux = linha
+            lista.append(listaAux)
+
+        file.close()
 
     return lista
 
