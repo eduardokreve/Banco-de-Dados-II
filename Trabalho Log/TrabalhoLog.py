@@ -2,8 +2,16 @@
 import os
 import string
 
+#definição da classe para utilizar Lista de Objetos
+class log():
+    def __init__(self, Ti = ' ', var = '', old = 0, new = 0):
+        self.Ti = Ti
+        self.var = var
+        self.old = old
+        self.new = new
+
 def files():
-    
+    #abre o arquivo com o nome correto
     while True:
         try:
             nomeArquivo = input("Nome do arquivo: ")
@@ -13,6 +21,7 @@ def files():
         else:
             break
     
+    #pega os dados do arquivo e coloca na lista
     lista = []
     listaAux = []
 
@@ -32,7 +41,6 @@ def files():
     return lista
 
 
-
 def main ():
     tabelaDeLog = files()
     i = 0
@@ -41,5 +49,13 @@ def main ():
         print(tabelaDeLog[i])
         i += 1
 
+    #primeira tentativa para organizar os dados em uma estrutura
+    #Proximo passo, organizar tudo em um conjunto de objetos
+    #talvez ajude https://aprendendo-computacao-com-python.readthedocs.io/en/latest/capitulo_15.html
+    
+    ini = log()
+
+    print(ini.new, ini.old)
+    
 if __name__ == "__main__":
     main()
