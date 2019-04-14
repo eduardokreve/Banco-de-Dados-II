@@ -1,14 +1,15 @@
 # coding=utf-8
 import os
 import string
+from dataclasses import dataclass
 
 #definição da classe para utilizar Lista de Objetos
-class log():
-    def __init__(self, Ti = ' ', var = '', old = 0, new = 0):
-        self.Ti = Ti
-        self.var = var
-        self.old = old
-        self.new = new
+@dataclass
+class Point:
+    Ti: int
+    var: int
+    old: int = 0
+    new: int = 0
 
 def files():
     #abre o arquivo com o nome correto
@@ -49,13 +50,9 @@ def main ():
         print(tabelaDeLog[i])
         i += 1
 
-    #primeira tentativa para organizar os dados em uma estrutura
-    #Proximo passo, organizar tudo em um conjunto de objetos
-    #talvez ajude https://aprendendo-computacao-com-python.readthedocs.io/en/latest/capitulo_15.html
-    
-    ini = log()
+    ini = Point(2, 3)
 
-    print(ini.new, ini.old)
+    print(ini)
     
 if __name__ == "__main__":
     main()
