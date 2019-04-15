@@ -6,8 +6,8 @@ from dataclasses import dataclass
 #definição da classe para utilizar Lista de Objetos
 @dataclass
 class Point:
-    Ti: int
-    var: int
+    Ti: str
+    var: str
     old: int = 0
     new: int = 0
 
@@ -50,7 +50,7 @@ def main ():
         print(tabelaDeLog[i])
         i += 1
 
-    ini = Point(2, 3)
+    ini = Point('t1', 'A')
 
     print(ini)
     
