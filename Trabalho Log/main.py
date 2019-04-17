@@ -1,7 +1,7 @@
 # coding=utf-8
 import os
 import string
-from arquivo import openFile, clearLista
+from arquivo import openFile, clearLista,imprimeLista
 
 #definição da classe para utilizar Lista de Objetos
 class Transacao:
@@ -18,19 +18,13 @@ class Ckpt:
         self.transacao = transacao
     
 
-
 def main ():
-    tabelaDeLog = openFile()
-    clearLista(tabelaDeLog) #limpar a lista
-    i = 0
-
-    while i < len(tabelaDeLog):
-        print(tabelaDeLog[i])
-        i += 1
+    tabelaDeLog = openFile() #abre
+    clearLista(tabelaDeLog)  #limpa
+    imprimeLista(tabelaDeLog)#mostra na tela
 
     ini = Transacao('t1', 'A')
     
-   # print(ini)
     objetoCkpt= Ckpt(2,ini)
     print(objetoCkpt.transacao)
 

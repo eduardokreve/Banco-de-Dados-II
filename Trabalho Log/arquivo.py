@@ -2,8 +2,8 @@ def openFile():
     #abre o arquivo com o nome correto
     while True:
         try:
-            nomeArquivo = input("Nome do arquivo: ")
-            file = open(nomeArquivo, 'r')
+            #nomeArquivo = input("Nome do arquivo: ")
+            file = open("teste02", 'r')
         except FileNotFoundError:
             print("Arquivo não encontrado\n")
         else:
@@ -34,4 +34,10 @@ def clearLista(lista):
         lista[i] = lista[i].lower() #coloca as letras para minusculo     
         lista[i] = lista[i].replace('<',"") #tira caracteres desnecessarios
         lista[i] = lista[i].replace('>',"")
-        i+=1
+        i += 1
+
+def imprimeLista(lista):
+    i = 0
+    while i < len(lista):
+        print(lista[i])
+        i += 1
